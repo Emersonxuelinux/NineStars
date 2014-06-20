@@ -1,0 +1,26 @@
+下拉菜单选择可多选
+=============================================================================================================
+<script src="/dist/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript">
+        $(window).on('load', function () {
+
+            $('.selectpicker').selectpicker({
+                'selectedText': 'cat'
+            });
+
+            // $('.selectpicker').selectpicker('hide');
+        });
+    </script>
+
+    <select id="xx" name="cars" class="selectpicker" multiple title="选择服务器编号" data-width="auto">
+        <option value="volvo">1</option>
+        <option value="saab">2</option>
+        <option value="fiat">3</option>
+    </select>
+        <button class="btn btn-warning bu">all</button>
+        <script>
+            $('.bu').click(function(){
+            $('#xx').selectpicker('selectAll');
+            })
+        </script>
+=============================================================================================================

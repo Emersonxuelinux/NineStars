@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>九颗星</title>
+    <link rel="stylesheet" href="/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <!--link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css"-->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="/dist/js/bootstrap.min.js"></script>
+
+
+<div class="container" style="margin-top:100px;">
+    <!--h1 class="text-primary">九颗星</h1-->
+
+    <div class="row">
+        <div class="col-xs-4">
+        </div>
+        <div class="col-xs-3">
+            <h2 class="page-header">登陆</h2>
+
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input class="form-control input-lg" name="username" type="text" id="id_username"
+                           placeholder="用户名">
+                </div>
+                <div class="form-group">
+                    <input class="form-control input-lg" name="password" type="password" id="id_password"
+                           placeholder="密码">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit" value="login">登陆</button>
+                    <input type="hidden" name="next" value="{{ next }}"/>
+                </div>
+                {% if form.errors %}
+                <div class="alert alert-danger">用户名或密码不对,请重新输入</div>
+                {% endif %}
+            </form>
+        </div>
+        <div class="col-xs-4">
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html lang=en>
+  <head>
+      <script type="text/javascript" src="http://127.0.0.1/ajaxproject/protoculous-1.0.2-packed.js"></script>
+      <script type="text/javascript">
+function update_fib() {
+  new Ajax.Updater(’fib_div’, ‘refresh/’, {asynchronous:true});
+}
+</script>
+
+<h1> The Fibonacci Sequence </h1>
+<div id="fib_div" onclick="update_fib();">
+    <ul>
+  {% for entry in fib_sequence %}
+  <li>{{ entry }}</li>
+  {% endfor %}
+</ul>
+</div>
+
+    <title> {% block title %} Pastie Lobby {% endblock %} </title>
+  </head>
+  <body>
+    {% block content %}{% endblock content %}
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<html lang=en>
+  <head>
+      <script type="text/javascript" src="/dist/js/jquery.js"></script>
+      <script type="text/javascript" src="/dist/js/prototype-1.7.js"></script>
+
+    <title> {% block title %} Pastie Lobby {% endblock %} </title>
+  </head>
+  <body>
+     <script type="text/javascript">
+function update_fib() {
+  new Ajax.Updater('fib_div', '/jqqoo/', {asynchronous:true});
+}
+</script>
+
+<h1> The Fibonacci Sequence </h1>
+     <h1> The Fibonacci Sequence </h1>
+     <h1> The Fibonacci Sequence </h1>
+     <h1> The Fibonacci Sequence </h1>
+     <h1> The Fibonacci Sequence </h1>
+     <h1>test</h1>
+<div id="fib_div" onclick="update_fib();">
+ {% include 'dist/page/fib.html' %}
+</div>
+
+  </body>
+</html>

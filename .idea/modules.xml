@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/NineStars.iml" filepath="$PROJECT_DIR$/.idea/NineStars.iml" />
+      <module fileurl="file://E:/Py/.idea/Py.iml" filepath="E:/Py/.idea/Py.iml" />
+      <module fileurl="file://D:/mypy/.idea/mypy.iml" filepath="D:/mypy/.idea/mypy.iml" />
+      <module fileurl="file://D:/tools/.idea/tools.iml" filepath="D:/tools/.idea/tools.iml" />
+    </modules>
+  </component>
+</project>
+

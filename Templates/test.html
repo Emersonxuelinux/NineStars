@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+        {% block one %}in{% endblock %}
+        {% block oneactive %}active{% endblock %}
+{% block test %}
+
+
+
+<form role="form" method="post" action="/test/">
+<table class="table table-hover table-condensed" style="width:700px;">
+    <tr>
+        <th># 类型</th>
+        <th># 打包</th>
+        <th># 服务器编号</th>
+        <th># 整体发布</th>
+        <th># 发布SQL</th>
+    </tr>
+    <tr>
+        <td><button type="submit" class="btn btn-info disabled">安卓测试</button></td>
+        <td><button type="submit" class="btn btn-default" name="DBsh" value="Cdban">更新游戏服包</button></td>
+        <td>
+            <select name="SLan" class="selectpicker" multiple title="选择服务器编号" data-width="auto">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+        </td>
+        <td><button type="submit" class="btn btn-default" name="DBsh" value="Udban">分发至游戏服</button></td>
+        <td><button type="submit" class="btn btn-default" name="DBsh" value="Udbansql">更新SQL</button></td>
+    </tr>
+    <tr>
+        <td><button type="submit" class="btn btn-warning disabled">IOS测试</button>
+        <td><button type="submit" class="btn btn-default" name="DBsh" value="Cdbios">更新游戏服包</button></td>
+        <td >
+                <select name="SLios" class="selectpicker" multiple title="选择服务器编号" data-width="auto">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+        </td>
+        <td><button type="submit" class="btn btn-default" name="DBsh" value="Udbios">分发至游戏服</button></td>
+        <td><button type="submit" class="btn btn-default" name="DBsh" value="Udbiossql">更新SQL</button></td>
+    </tr>
+    <tr>
+        <td><button type="submit" class="btn btn-danger disabled">武道大会</button>
+        <td><button type="submit" class="btn btn-default" name="DBsh" value="Cdbiosbg">更新游戏服包</button></td>
+        <td >
+            <select id="xx" name="SLiosbg" class="selectpicker" multiple title="选择服务器编号" data-width="auto">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+        </td>
+        <td><button type="submit" class="btn btn-default" name="DBsh" value="Udbiosbg">分发至游戏服</button></td>
+        <td><button type="submit" class="btn btn-default" name="DBsh" value="Udbiosbgsql">更新SQL</button></td>
+    </tr>
+    <tr>
+        <td><button type="submit" class="btn btn-danger disabled">资源更新</button></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button type="submit" class="btn btn-default" name="DBsh" value="Ures">资源更新</button></td>
+    </tr>
+</table>
+    </form>
+
+
+
+
+
+{% if test %}
+<div class="alert alert-success">
+    {% for i in test %}
+    {{ i }}<br>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}
+
+
