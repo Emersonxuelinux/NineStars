@@ -21,4 +21,5 @@ urlpatterns = patterns('',
     url(r'^jqqoo/$', OneStar.views.jqqoo),
     url(r'^ref/$', OneStar.views.ref),
     url(r'^refp/$', OneStar.views.refp),
+    url(r'^dsearch/$', OneStar.views.dsearch),
 )

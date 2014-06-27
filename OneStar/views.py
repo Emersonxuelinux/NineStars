@@ -8,7 +8,9 @@ import NineStars.runOrder
 import json
 import time
 from django.http import HttpResponse
-
+from OneStar.models import ProjectList
+from OneStar.setupdb import dbUpdate
+import subprocess
 # Create your views here.
 
 @login_required
@@ -133,4 +135,30 @@ def refp(request):
         res = f.readlines()
     return HttpResponse(res,{"xx":"xx"})
 
+def dsearch(request):
+    #A=ProjectList.objects.values()
+    A1=ProjectList.objects.filter(id=1)
+    print A1[0].workdir
+    #A1=ProjectList.objects.all()
+    CF="com/huayi/djgame2/dragonball/common/config/system/"
+    #make output dir
+    TargetDir='/data/DB/DBAndroid/'
+    #make output sub dir
+    SerTag='db'
+    #make a distinction between android and ios platform.
+    MPlat='android'
+    #make package source dir
+    WorkDir="/data/shell/servertest/"
+    #update about new jar and rename.
+    subprocess.Popen('svn up', shell=True, cwd=WorkDir).communicate()
+    subprocess.Popen('cp serverB.jar r-server.jar', shell=True, cwd=WorkDir, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
+
+    #print ConfigList
+    for i in [1,2,3,4]:
+        print "{0}-{1}-{2}".format(MPlat, SerTag, i)
+        ConfigList={'ConfigFile':'PortConfigure.conf','CF':CF,'sId':i,'TDIR':TargetDir,'UDIR':CF,'STag':SerTag,'A_I':MPlat,'WDir':WorkDir}
+
+        dbUpdate.Update_Jar(ConfigList)
+    #A = A1.values()
+    return render_to_response("dsearch.html", {'A':A1})
 
